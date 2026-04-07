@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 260px;
+      padding: 16px;
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      background: #000080;
+      color: #ffff00;
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      font-size: 16px;
+      margin: 0 0 4px;
+      color: #00ff00;
+      text-shadow: 2px 2px #ff00ff;
+    }
+    p {
+      font-size: 11px;
+      margin: 0 0 12px;
+    }
+    button {
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 10px 20px;
+      background: #ff00ff;
+      color: #ffff00;
+      border: 3px outset #ff69b4;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00ff00;
+      color: #000080;
+    }
+    button:active {
+      border-style: inset;
+    }
+    #status {
+      font-size: 11px;
+      margin-top: 10px;
+      min-height: 14px;
+    }
+    .stars {
+      color: #ffff00;
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars">* * * * * * * * *</div>
+  <h1>~*~ GeoCities-ifier ~*~</h1>
+  <p>Take any page back to 1999!</p>
+  <button id="geocitify">GeoCities-ify!</button>
+  <div id="status"></div>
+  <div class="stars">* * * * * * * * *</div>
+  <script src="popup.js"></script>
+</body>
+</html>

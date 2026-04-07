@@ -1,0 +1,432 @@
+/* ===== GeoCities-ifier Injected Styles ===== */
+/* All colors driven by CSS custom properties set in content.js */
+
+/* Background + base font */
+body.geocities-ified {
+  background-image: var(--gc-bg-pattern) !important;
+  background-repeat: repeat !important;
+  background-color: var(--gc-bg) !important;
+  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px !important;
+}
+
+body.geocities-ified,
+body.geocities-ified * {
+  font-family: var(--gc-font) !important;
+}
+
+/* Classic link colors */
+body.geocities-ified a:link,
+body.geocities-ified a[href] {
+  color: var(--gc-link) !important;
+  text-decoration: underline !important;
+}
+
+body.geocities-ified a:visited {
+  color: var(--gc-visited) !important;
+}
+
+body.geocities-ified a:hover {
+  color: var(--gc-heading) !important;
+}
+
+/* Text glow for headings */
+body.geocities-ified h1,
+body.geocities-ified h2,
+body.geocities-ified h3 {
+  color: var(--gc-heading) !important;
+  text-shadow: 2px 2px var(--gc-shadow1), -1px -1px var(--gc-shadow2) !important;
+}
+
+/* Body text */
+body.geocities-ified p,
+body.geocities-ified span,
+body.geocities-ified div,
+body.geocities-ified li,
+body.geocities-ified td {
+  color: var(--gc-text) !important;
+}
+
+/* ============================================ */
+/*  BANNER — base + per-style overrides         */
+/* ============================================ */
+
+.geocities-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--gc-stripe1),
+    var(--gc-stripe1) 10px,
+    var(--gc-stripe2) 10px,
+    var(--gc-stripe2) 20px
+  );
+  padding: 4px 0;
+  text-align: center;
+}
+
+.geocities-banner-inner {
+  background: var(--gc-banner-bg);
+  color: var(--gc-banner-text);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 16px;
+  display: inline-block;
+  border: 3px outset #ff6666;
+  text-shadow: 2px 2px #000;
+  animation: geocities-blink 1s step-end infinite;
+}
+
+/* GeoCities: classic blinking hazard stripes */
+.gc-style-geocities .geocities-banner-inner {
+  border-color: #ff6666;
+}
+
+/* XP: solid blue gradient, no blink */
+.gc-style-xp {
+  background: linear-gradient(180deg, #0a246a, #3a6ea5) !important;
+  padding: 0;
+}
+.gc-style-xp .geocities-banner-inner {
+  background: transparent;
+  border: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  animation: none;
+  font-size: 14px;
+  padding: 6px 16px;
+}
+
+/* Netscape: grey toolbar look */
+.gc-style-netscape {
+  background: linear-gradient(180deg, #d4d0c8, #b8b4ac) !important;
+  border-bottom: 2px groove #ffffff;
+  padding: 0;
+}
+.gc-style-netscape .geocities-banner-inner {
+  background: transparent;
+  color: #000000;
+  border: none;
+  text-shadow: none;
+  animation: none;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 5px 12px;
+}
+
+/* MySpace: dark nav bar */
+.gc-style-myspace {
+  background: linear-gradient(180deg, #003366, #002244) !important;
+  padding: 0;
+}
+.gc-style-myspace .geocities-banner-inner {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: normal;
+  text-shadow: none;
+  animation: none;
+  padding: 8px 16px;
+}
+
+/* AOL: bright keyword bar */
+.gc-style-aol {
+  background: linear-gradient(180deg, #3366cc, #2255aa) !important;
+  border-bottom: 2px solid #1a4488;
+  padding: 0;
+}
+.gc-style-aol .geocities-banner-inner {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  text-shadow: 1px 1px rgba(0,0,0,0.3);
+  animation: none;
+  padding: 7px 16px;
+}
+
+@keyframes geocities-blink {
+  50% { opacity: 0; }
+}
+
+/* ============================================ */
+/*  XP window chrome                            */
+/* ============================================ */
+
+.gc-xp-titlebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  background: linear-gradient(180deg, #0058e6, #3a8fd9 40%, #1a6fcc 60%, #0050cc);
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26px;
+  box-sizing: border-box;
+}
+
+.gc-xp-title {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif !important;
+  text-shadow: 1px 1px rgba(0,0,0,0.4);
+}
+
+.gc-xp-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.gc-xp-btn {
+  width: 21px;
+  height: 21px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif !important;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: default;
+}
+
+.gc-xp-min { background: linear-gradient(180deg, #3c8ee6, #2663b0); }
+.gc-xp-max { background: linear-gradient(180deg, #3c8ee6, #2663b0); }
+.gc-xp-close { background: linear-gradient(180deg, #e04040, #c03030); }
+
+.gc-xp-addressbar {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  right: 0;
+  z-index: 999998;
+  background: #f1efe2;
+  border-bottom: 1px solid #aca899;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-family: 'Tahoma', sans-serif !important;
+  color: #000;
+}
+
+.gc-xp-url {
+  background: #ffffff;
+  border: 1px inset #7f9db9;
+  padding: 1px 4px;
+  font-size: 12px;
+  margin: 0 4px;
+}
+
+/* ============================================ */
+/*  Netscape toolbar                            */
+/* ============================================ */
+
+.gc-ns-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999999;
+  background: #c0c0c0;
+  border-bottom: 2px groove #e0e0e0;
+  padding: 3px 4px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.gc-ns-btn {
+  background: linear-gradient(180deg, #dfdfdf, #b0b0b0);
+  border: 1px outset #d0d0d0;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-family: 'Arial', sans-serif !important;
+  color: #000000;
+  cursor: default;
+}
+
+.gc-ns-throbber {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  background: #336699;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: serif !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  animation: gc-ns-throb 1.5s ease-in-out infinite;
+}
+
+@keyframes gc-ns-throb {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================ */
+/*  MySpace profile box                         */
+/* ============================================ */
+
+.gc-ms-profile {
+  position: fixed;
+  top: 50px;
+  left: 16px;
+  z-index: 999998;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 12px 16px;
+  max-width: 260px;
+  font-family: 'Verdana', sans-serif !important;
+}
+
+.gc-ms-name {
+  color: var(--gc-heading);
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.gc-ms-detail {
+  color: #bbbbbb;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+/* ============================================ */
+/*  AOL Buddy List                              */
+/* ============================================ */
+
+.gc-aol-buddies {
+  position: fixed;
+  top: 80px;
+  right: 12px;
+  z-index: 999998;
+  background: #ffffee;
+  border: 2px outset #c0c0c0;
+  width: 160px;
+  font-family: 'Arial', sans-serif !important;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.gc-aol-header {
+  background: linear-gradient(180deg, #336699, #264d80);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.gc-aol-group {
+  background: #e8e4d8;
+  color: #333333;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-top: 1px solid #ccc;
+}
+
+.gc-aol-sn {
+  color: #000000;
+  font-size: 11px;
+  padding: 2px 8px 2px 16px;
+  cursor: default;
+}
+
+.gc-aol-sn:hover {
+  background: #3366cc;
+  color: #ffffff;
+}
+
+/* ============================================ */
+/*  Marquee bar                                 */
+/* ============================================ */
+
+.geocities-marquee-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: var(--gc-marquee-bg);
+  border-top: 3px ridge #c0c0c0;
+  overflow: hidden;
+  padding: 6px 0;
+}
+
+.geocities-marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--gc-marquee-text);
+  font-size: 16px;
+  font-weight: bold;
+  animation: geocities-scroll 15s linear infinite;
+}
+
+@keyframes geocities-scroll {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(-100%); }
+}
+
+/* ============================================ */
+/*  Visitor counter badge                       */
+/* ============================================ */
+
+.geocities-counter {
+  position: fixed;
+  bottom: 40px;
+  right: 16px;
+  z-index: 999998;
+  background: #000;
+  border: 2px ridge #c0c0c0;
+  padding: 6px 12px;
+  text-align: center;
+  font-family: 'Courier New', monospace !important;
+}
+
+.geocities-counter-label {
+  color: var(--gc-counter-label);
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.geocities-counter-num {
+  color: var(--gc-counter-num);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-family: 'Courier New', monospace !important;
+}
+
+/* ============================================ */
+/*  Sparkle cursor trail                        */
+/* ============================================ */
+
+.geocities-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999999;
+  font-size: 14px;
+  animation: geocities-sparkle-fade 0.8s ease-out forwards;
+}
+
+@keyframes geocities-sparkle-fade {
+  0%   { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(0.3) translateY(-30px); }
+}
+
+/* Push body content down for banner + toolbars */
+body.geocities-ified {
+  padding-top: 50px !important;
+  padding-bottom: 40px !important;
+}
